@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little Invitation</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:linear-gradient(135deg,#070809,#303338,#0b0c0e);color:#eee;font-family:Georgia,serif;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.bg{position:fixed;inset:0;background:radial-gradient(circle at 50% 40%,#ffffff12,transparent 30%);animation:glow 4s infinite alternate}
+.card{position:relative;z-index:2;width:min(720px,92%);text-align:center;padding:55px 28px;border:1px solid #999;background:#15171af2;box-shadow:0 25px 80px #000b}
+.kicker{font-size:11px;letter-spacing:5px;text-transform:uppercase;color:#aaa}
+h1{font-size:clamp(45px,9vw,78px);font-weight:400;margin:20px 0;color:#fff}
+.intro{font-size:18px;color:#bbb;line-height:1.7}
+button{padding:15px 30px;border:1px solid #bbb;background:linear-gradient(135deg,#dfe2e5,#777b80);color:#111;font:16px Georgia,serif;letter-spacing:1px;cursor:pointer;box-shadow:0 8px 25px #0008;transition:.25s}
+button:hover{transform:scale(1.05)}
+.open{margin-top:28px}
+.invite{display:none;animation:appear .8s ease}
+.invite.show{display:block}
+.line{height:1px;background:linear-gradient(90deg,transparent,#ccc,transparent);margin:28px auto;width:75%}
+h2{font-weight:400;font-size:27px;color:#ddd}
+p{font-size:18px;line-height:1.8;color:#c7c8ca}
+.details{margin:28px auto;border-top:1px solid #555;border-bottom:1px solid #555;padding:18px}
+.item{margin:12px}.label{display:block;font-size:9px;letter-spacing:3px;color:#999;margin-bottom:4px}
+.question{font-size:30px;margin:30px 0 22px;color:white}
+.answers{height:70px;position:relative;display:flex;gap:18px;justify-content:center;align-items:center}
+.yes{background:linear-gradient(135deg,#eee,#aaa)}
+.no{background:#1b1d20;color:#eee;position:relative}
+.final{display:none;animation:appear .7s ease}
+.final.show{display:block}
+.final h2{font-size:32px;color:#fff}
+.heart{position:fixed;z-index:5;bottom:-40px;pointer-events:none;font-size:24px;animation:floatHeart 5s linear forwards}
+.silly{display:inline-block;font-size:38px;animation:silly 1.5s ease-in-out infinite}
+@keyframes appear{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes glow{to{transform:scale(1.15);opacity:.7}}
+@keyframes floatHeart{0%{transform:translateY(0) rotate(0) scale(.6);opacity:0}15%{opacity:1}100%{transform:translateY(-110vh) rotate(25deg) scale(1.4);opacity:0}}
+@keyframes silly{0%,100%{transform:rotate(-8deg) scale(1)}50%{transform:rotate(8deg) scale(1.15)}}
+</style>
+</head>
+<body>
+<div class="bg"></div>
+
+<main class="card">
+  <div id="cover">
+    <div class="kicker">Something I made just for you</div>
+    <div class="silly">🥹</div>
+    <h1>One Little Surprise</h1>
+    <div class="intro">I have an invitation for you…<br><br>but you'll have to open it yourself. ♡</div>
+    <button class="open" onclick="openInvite()">💗 Open Your Invitation 💗</button>
+  </div>
+
+  <div id="invite" class="invite">
+    <div class="kicker">A Birthday Invitation</div>
+    <div class="silly">😏</div>
+    <h1>You're Invited ♡</h1>
+    <div style="font-size:22px;letter-spacing:2px;color:#d7d9dc;margin-top:-8px;">ENGR. KIPS EDIAS</div>
+    <div class="line"></div>
+    <h2>I want to take you out for your special day. 💕</h2>
+    <p>Just you, me, a little adventure, and lots of pictures to remember the day. So dress up, look handsome, and let me take you on a date. 🖤</p>
+    <div class="details">
+      <div class="item"><span class="label">DATE</span><strong>August 24 💗</strong></div>
+      <div class="item"><span class="label">DRESS CODE</span><strong>Wear something nice. 🖤</strong></div>
+      <div class="item"><span class="label">DESTINATION</span><strong>Manila Ocean Park 🐠</strong></div>
+      <div class="item"><span class="label">AFTER</span><strong>Photo Booth Date 📸💕</strong></div>
+    </div>
+    <div class="question">Will you be my birthday date? 🥺❤️</div>
+    <div class="answers">
+      <button class="yes" onclick="sayYes()">YES 💗</button>
+      <button class="no" id="noBtn" onmouseover="moveNo()" onclick="moveNo()">NO 😭</button>
+    </div>
+  </div>
+
+  <div id="final" class="final">
+    <div class="silly">🥰</div>
+    <div class="kicker">I was hoping you'd say that</div>
+    <h1>It's a Date. ❤️</h1>
+    <div class="line"></div>
+    <h2>See you on August 24, handsome. 💕</h2>
+    <p>Manila Ocean Park, a photo booth, and a whole day with me. I can't wait. 🥹📸❤️</p>
+  </div>
+</main>
+
+<script>
+function openInvite(){
+  document.getElementById('cover').style.display='none';
+  document.getElementById('invite').classList.add('show');
+  hearts();
+}
+function sayYes(){
+  document.getElementById('invite').style.display='none';
+  document.getElementById('final').classList.add('show');
+  hearts();
+}
+function moveNo(){
+  const btn=document.getElementById('noBtn');
+  const area=document.querySelector('.answers');
+  const maxX=Math.max(60,(area.clientWidth-btn.offsetWidth)/2);
+  const x=(Math.random()*maxX*2)-maxX;
+  const y=(Math.random()*45)-22;
+  btn.style.transform=`translate(${x}px,${y}px)`;
+}
+function hearts(){
+  for(let i=0;i<18;i++){
+    setTimeout(()=>{
+      const h=document.createElement('div');
+      h.className='heart';
+      h.textContent=['❤️','🩶','💕','💗','🤍'][Math.floor(Math.random()*5)];
+      h.style.left=Math.random()*100+'vw';
+      h.style.animationDuration=(4+Math.random()*3)+'s';
+      document.body.appendChild(h);
+      setTimeout(()=>h.remove(),7000);
+    },i*120);
+  }
+}
+</script>
+</body>
+</html>
