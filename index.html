@@ -5,622 +5,742 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Happy Birthday, Love ❤️</title>
+<title>Project Proposal | Engr. Kips</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Georgia, "Times New Roman", serif;
-    background: #f8f4ef;
-    color: #2d2926;
-    overflow-x: hidden;
-}
-
-/* HERO */
-
-.hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-    background:
-        linear-gradient(rgba(0,0,0,.42), rgba(0,0,0,.45)),
-        url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=85")
-        center/cover no-repeat;
-    color: white;
-    padding: 40px 20px;
-}
-
-.hero-content {
-    max-width: 850px;
-    animation: fadeIn 2s ease;
-}
-
-.small-title {
-    letter-spacing: 6px;
-    text-transform: uppercase;
-    font-size: 13px;
-    margin-bottom: 25px;
-}
-
-.hero h1 {
-    font-size: clamp(55px, 10vw, 110px);
-    font-weight: normal;
-    line-height: .95;
-    margin-bottom: 25px;
-}
-
-.hero h2 {
-    font-size: clamp(22px, 4vw, 38px);
-    font-weight: normal;
-    font-style: italic;
-}
-
-.hero p {
-    margin-top: 30px;
-    font-family: Arial, sans-serif;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    font-size: 12px;
-}
-
-/* SCROLL */
-
-.scroll {
-    position: absolute;
-    bottom: 25px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: Arial, sans-serif;
-    font-size: 11px;
-    letter-spacing: 3px;
-}
-
-/* SECTION */
-
-section {
-    padding: 90px 20px;
-}
-
-.container {
-    max-width: 1100px;
-    margin: auto;
-}
-
-.section-label {
-    text-align: center;
-    font-family: Arial, sans-serif;
-    font-size: 11px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    margin-bottom: 18px;
-}
-
-.section-title {
-    text-align: center;
-    font-size: clamp(35px, 6vw, 60px);
-    font-weight: normal;
-    margin-bottom: 25px;
-}
-
-.intro {
-    max-width: 700px;
-    margin: auto;
-    text-align: center;
-    font-size: 19px;
-    line-height: 1.8;
-}
-
-/* LOVE MESSAGE */
-
-.message-section {
-    background: #fff;
-}
-
-.message {
-    max-width: 760px;
-    margin: 50px auto 0;
-    font-size: 19px;
-    line-height: 2;
-    text-align: center;
-}
-
-.signature {
-    text-align: center;
-    font-size: 28px;
-    font-style: italic;
-    margin-top: 35px;
-}
-
-/* DESTINATIONS */
-
-.destinations {
-    background: #eee8df;
-}
-
-.destination-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    margin-top: 55px;
-}
-
-.card {
-    background: white;
-    overflow: hidden;
-    position: relative;
-    transition: transform .4s ease, box-shadow .4s ease;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 45px rgba(0,0,0,.15);
-}
-
-.card img {
-    width: 100%;
-    height: 390px;
-    object-fit: cover;
-    display: block;
-}
-
-.card-content {
-    padding: 25px;
-    text-align: center;
-}
-
-.card-number {
-    font-family: Arial, sans-serif;
-    font-size: 10px;
-    letter-spacing: 3px;
-    color: #888;
-}
-
-.card h3 {
-    font-size: 29px;
-    font-weight: normal;
-    margin: 10px 0;
-}
-
-.card p {
-    font-family: Arial, sans-serif;
-    font-size: 13px;
-    color: #666;
-    line-height: 1.6;
-}
-
-/* DINNER */
-
-.dinner {
-    min-height: 650px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background:
-        linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.55)),
-        url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=2000&q=85")
-        center/cover no-repeat;
-    color: white;
-}
-
-.dinner-content {
-    max-width: 700px;
-}
-
-.dinner h2 {
-    font-size: clamp(45px, 7vw, 75px);
-    font-weight: normal;
-    margin-bottom: 20px;
-}
-
-.dinner p {
-    font-family: Arial, sans-serif;
-    font-size: 15px;
-    line-height: 1.8;
-    letter-spacing: 1px;
-}
-
-/* CHOICE */
-
-.choice {
-    background: #fff;
-    text-align: center;
-}
-
-.choice-box {
-    max-width: 700px;
-    margin: 45px auto;
-    padding: 45px 25px;
-    border: 1px solid #d8d0c7;
-}
-
-.choice-box h3 {
-    font-size: 34px;
-    font-weight: normal;
-    margin-bottom: 15px;
-}
-
-.choice-box p {
-    font-family: Arial, sans-serif;
-    color: #666;
-    line-height: 1.7;
-}
-
-/* BUTTON */
-
-button {
-    margin-top: 30px;
-    border: none;
-    background: #2d2926;
-    color: white;
-    padding: 16px 35px;
-    font-family: Arial, sans-serif;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-size: 11px;
-    cursor: pointer;
-    transition: .3s;
-}
-
-button:hover {
-    background: #555;
-    transform: scale(1.04);
-}
-
-/* SECRET MESSAGE */
-
-#secret {
-    display: none;
-    margin-top: 35px;
-    font-size: 20px;
-    line-height: 1.8;
-    font-style: italic;
-}
-
-/* FOOTER */
-
-footer {
-    background: #2d2926;
-    color: white;
-    text-align: center;
-    padding: 60px 20px;
-}
-
-footer h2 {
-    font-size: 35px;
-    font-weight: normal;
-    margin-bottom: 15px;
-}
-
-footer p {
-    font-family: Arial, sans-serif;
-    font-size: 11px;
-    letter-spacing: 3px;
-    opacity: .7;
-}
-
-/* HEARTS */
-
-.heart {
-    position: fixed;
-    bottom: -20px;
-    font-size: 18px;
-    animation: floatUp 6s linear forwards;
-    pointer-events: none;
-    z-index: 999;
-}
-
-@keyframes floatUp {
-    0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0;
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
     }
 
-    15% {
-        opacity: 1;
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #eef1f3;
+        color: #17202a;
+        min-height: 100vh;
     }
 
-    100% {
-        transform: translateY(-110vh) rotate(360deg);
-        opacity: 0;
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
+    .top-bar {
+        background: #20282f;
+        color: white;
+        padding: 12px 20px;
+        font-size: 12px;
+        letter-spacing: 2px;
+        text-align: center;
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* MOBILE */
-
-@media (max-width: 800px) {
-
-    .destination-grid {
-        grid-template-columns: 1fr;
+    .container {
+        width: 92%;
+        max-width: 850px;
+        margin: 35px auto;
     }
 
-    .card img {
-        height: 420px;
+    .document {
+        background: white;
+        border: 2px solid #252d33;
+        box-shadow: 8px 8px 0 #c4c9cc;
     }
 
-    section {
-        padding: 70px 18px;
+    .header {
+        padding: 35px 30px;
+        border-bottom: 2px solid #252d33;
+        background:
+            repeating-linear-gradient(
+                45deg,
+                #f5f5f5,
+                #f5f5f5 10px,
+                #eeeeee 10px,
+                #eeeeee 20px
+            );
     }
 
-    .hero h1 {
-        font-size: 62px;
+    .classification {
+        display: inline-block;
+        border: 2px solid #c0392b;
+        color: #c0392b;
+        padding: 6px 12px;
+        font-weight: bold;
+        font-size: 11px;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
     }
-}
+
+    h1 {
+        font-size: clamp(32px, 7vw, 62px);
+        line-height: 1;
+        margin-bottom: 15px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+        color: #5d666d;
+        line-height: 1.7;
+    }
+
+    .document-number {
+        margin-top: 25px;
+        font-family: monospace;
+        font-size: 12px;
+        color: #555;
+    }
+
+    .content {
+        padding: 35px 30px;
+    }
+
+    .notice {
+        border-left: 5px solid #e0a800;
+        background: #fff8dc;
+        padding: 20px;
+        margin-bottom: 30px;
+        line-height: 1.7;
+    }
+
+    .notice strong {
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    .step {
+        display: none;
+        animation: fadeIn .5s ease;
+    }
+
+    .step.active {
+        display: block;
+    }
+
+    .step-number {
+        font-family: monospace;
+        font-size: 12px;
+        color: #777;
+        margin-bottom: 10px;
+    }
+
+    .step h2 {
+        font-size: clamp(27px, 5vw, 42px);
+        margin-bottom: 18px;
+    }
+
+    .step p {
+        line-height: 1.8;
+        color: #515a60;
+        margin-bottom: 25px;
+    }
+
+    .blueprint {
+        border: 2px dashed #6d7780;
+        padding: 25px;
+        margin: 25px 0;
+        background: #f8fafb;
+    }
+
+    .blueprint-title {
+        font-family: monospace;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    .spec {
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        border-top: 1px solid #d8dde0;
+        padding: 12px 0;
+        font-size: 14px;
+    }
+
+    .spec:last-child {
+        border-bottom: 1px solid #d8dde0;
+    }
+
+    .spec strong {
+        color: #303940;
+    }
+
+    .destination {
+        margin-top: 20px;
+        border: 2px solid #252d33;
+        overflow: hidden;
+    }
+
+    .destination-image {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .destination-info {
+        padding: 22px;
+    }
+
+    .destination-info h3 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .photo-box {
+        border: 2px dashed #777;
+        padding: 35px 20px;
+        text-align: center;
+        margin-top: 20px;
+        background: #fafafa;
+    }
+
+    .photo-icon {
+        font-size: 55px;
+        margin-bottom: 15px;
+    }
+
+    .approval {
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    .stamp {
+        display: inline-block;
+        border: 4px solid #218838;
+        color: #218838;
+        padding: 12px 25px;
+        font-size: 20px;
+        font-weight: bold;
+        transform: rotate(-3deg);
+        margin: 20px 0 30px;
+    }
+
+    .heart-message {
+        background: #fff0f3;
+        border: 1px solid #f2c3cc;
+        padding: 30px 22px;
+        line-height: 1.9;
+        font-size: 17px;
+    }
+
+    .button-area {
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+    }
+
+    button {
+        border: 0;
+        padding: 15px 24px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 13px;
+        letter-spacing: .5px;
+        transition: .2s;
+    }
+
+    .back {
+        background: #d9dde0;
+        color: #222;
+    }
+
+    .next {
+        background: #252d33;
+        color: white;
+        margin-left: auto;
+    }
+
+    .approve {
+        background: #218838;
+        color: white;
+        font-size: 16px;
+        padding: 17px 30px;
+    }
+
+    button:hover {
+        transform: translateY(-2px);
+        opacity: .9;
+    }
+
+    .progress {
+        display: flex;
+        justify-content: space-between;
+        gap: 5px;
+        margin: 30px 0 10px;
+    }
+
+    .progress-line {
+        height: 5px;
+        flex: 1;
+        background: #d5d9dc;
+    }
+
+    .progress-line.active {
+        background: #252d33;
+    }
+
+    .footer {
+        background: #20282f;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .secret {
+        display: none;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @media(max-width:600px) {
+
+        .container {
+            width: 95%;
+            margin: 20px auto;
+        }
+
+        .header,
+        .content {
+            padding: 25px 20px;
+        }
+
+        .spec {
+            grid-template-columns: 1fr;
+            gap: 5px;
+        }
+
+        .destination-image {
+            height: 220px;
+        }
+
+        .button-area {
+            flex-direction: column;
+        }
+
+        .next,
+        .back {
+            margin: 0;
+            width: 100%;
+        }
+    }
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
+<div class="top-bar">
+    ENGINEERING & PROJECT MANAGEMENT OFFICE
+</div>
 
-<header class="hero">
+<div class="container">
 
-    <div class="hero-content">
+<div class="document">
 
-        <div class="small-title">
-            A Special Invitation
+    <!-- HEADER -->
+
+    <div class="header">
+
+        <div class="classification">
+            CONFIDENTIAL DOCUMENT
         </div>
 
-        <h1>Happy Birthday</h1>
+        <h1>🏗️ Project Proposal</h1>
 
-        <h2>to my favorite person ❤️</h2>
-
-        <p>
-            Your birthday adventure awaits
+        <p class="subtitle">
+            Authorized Personnel Only<br>
+            Birthday Project Development Plan
         </p>
+
+        <div class="document-number">
+            PROJECT NO.: KP-BDAY-2026
+        </div>
 
     </div>
 
-    <div class="scroll">
-        ↓ SCROLL TO DISCOVER ↓
-    </div>
 
-</header>
+    <div class="content">
 
+        <div class="notice">
 
-<!-- MESSAGE -->
+            <strong>🏗️ ENGINEERING NOTICE</strong>
 
-<section class="message-section">
+            Engr. Kips, you have received a confidential
+            project proposal.
 
-    <div class="container">
-
-        <div class="section-label">
-            Dear Birthday Boy
-        </div>
-
-        <h2 class="section-title">
-            This year, let's make memories.
-        </h2>
-
-        <p class="intro">
-            Happy Birthday, my love. ❤️
-            <br><br>
-            Instead of giving you just one birthday plan,
-            I wanted to give you something a little more special —
-            an adventure that we can choose together.
-        </p>
-
-        <div class="message">
-
-            I hope this birthday reminds you of how loved,
-            appreciated, and important you are to me.
-            <br><br>
-
-            I don't need a perfect destination,
-            a fancy place, or a grand celebration.
-            <br><br>
-
-            As long as I'm with you,
-            anywhere can become my favorite place.
-            <br><br>
-
-            So for your birthday...
             <br>
-            <strong>you choose the adventure.</strong>
+
+            Your cooperation is required to proceed
+            with the project.
 
         </div>
 
-        <div class="signature">
-            With all my love, ❤️
+
+        <!-- PROGRESS -->
+
+        <div class="progress">
+
+            <div class="progress-line active"></div>
+            <div class="progress-line"></div>
+            <div class="progress-line"></div>
+            <div class="progress-line"></div>
+            <div class="progress-line"></div>
+            <div class="progress-line"></div>
+
         </div>
 
-    </div>
 
-</section>
+        <!-- STEP 1 -->
 
+        <div class="step active" id="step1">
 
-<!-- DESTINATIONS -->
-
-<section class="destinations">
-
-    <div class="container">
-
-        <div class="section-label">
-            Choose Our Adventure
-        </div>
-
-        <h2 class="section-title">
-            Where should we go?
-        </h2>
-
-        <p class="intro">
-            Three possibilities. One birthday.
-            And hopefully a lot of unforgettable memories.
-        </p>
-
-
-        <div class="destination-grid">
-
-            <!-- DESTINATION 1 -->
-
-            <div class="card">
-
-                <img src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=1200&q=85">
-
-                <div class="card-content">
-
-                    <div class="card-number">
-                        OPTION 01
-                    </div>
-
-                    <h3>Beach Escape</h3>
-
-                    <p>
-                        Sun, sea, beautiful views,
-                        and a little escape from everything.
-                    </p>
-
-                </div>
-
+            <div class="step-number">
+                PHASE 01 / DOCUMENT REVIEW
             </div>
 
-
-            <!-- DESTINATION 2 -->
-
-            <div class="card">
-
-                <img src="https://images.unsplash.com/photo-1521336575822-6da63fb45455?auto=format&fit=crop&w=1200&q=85">
-
-                <div class="card-content">
-
-                    <div class="card-number">
-                        OPTION 02
-                    </div>
-
-                    <h3>Adventure Day</h3>
-
-                    <p>
-                        A fun-filled day, new experiences,
-                        and memories we can laugh about later.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- DESTINATION 3 -->
-
-            <div class="card">
-
-                <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1200&q=85">
-
-                <div class="card-content">
-
-                    <div class="card-number">
-                        OPTION 03
-                    </div>
-
-                    <h3>City Escape</h3>
-
-                    <p>
-                        Explore, eat, relax,
-                        and spend the whole day together.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- DINNER -->
-
-<section class="dinner">
-
-    <div class="dinner-content">
-
-        <div class="section-label">
-            And Then...
-        </div>
-
-        <h2>Dinner for Two</h2>
-
-        <p>
-            No matter which adventure you choose,
-            the day ends with a special dinner date —
-            just the two of us. ❤️
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- CHOICE -->
-
-<section class="choice">
-
-    <div class="container">
-
-        <div class="section-label">
-            Your Birthday. Your Choice.
-        </div>
-
-        <h2 class="section-title">
-            So, where are we going?
-        </h2>
-
-        <div class="choice-box">
-
-            <h3>
-                Pick your adventure.
-            </h3>
+            <h2>📋 View Project Plans</h2>
 
             <p>
-                You don't have to choose right now.
-                Just know that whatever you choose,
-                I'll be there beside you.
+                Before construction begins, the proposed
+                birthday project must first be reviewed.
             </p>
 
-            <button onclick="showMessage()">
-                Open Your Birthday Message ❤️
-            </button>
+            <div class="blueprint">
 
-            <div id="secret">
+                <div class="blueprint-title">
+                    PROJECT SPECIFICATIONS
+                </div>
 
-                Happy Birthday, love. ❤️
-                <br><br>
+                <div class="spec">
+                    <strong>Project Type</strong>
+                    <span>Birthday Celebration</span>
+                </div>
 
-                Thank you for being you.
-                I hope this year brings you happiness,
-                success, peace, and everything you've been wishing for.
-                <br><br>
+                <div class="spec">
+                    <strong>Project Engineer</strong>
+                    <span>Engr. Kips</span>
+                </div>
 
-                And I hope I get to be beside you
-                for many more birthdays to come.
-                <br><br>
+                <div class="spec">
+                    <strong>Project Manager</strong>
+                    <span>Your Favorite Person ❤️</span>
+                </div>
 
-                I love you. ❤️
+                <div class="spec">
+                    <strong>Duration</strong>
+                    <span>One unforgettable day</span>
+                </div>
+
+                <div class="spec">
+                    <strong>Objective</strong>
+                    <span>Create happy memories together</span>
+                </div>
+
+            </div>
+
+            <div class="button-area">
+
+                <button class="next" onclick="nextStep()">
+                    REVIEW PLANS →
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- STEP 2 -->
+
+        <div class="step" id="step2">
+
+            <div class="step-number">
+                PHASE 02 / PROJECT DETAILS
+            </div>
+
+            <h2>🎉 Birthday Project</h2>
+
+            <p>
+                The purpose of this project is simple:
+                celebrate YOU.
+            </p>
+
+            <div class="blueprint">
+
+                <div class="blueprint-title">
+                    PROJECT OBJECTIVES
+                </div>
+
+                <div class="spec">
+                    <strong>Objective 01</strong>
+                    <span>Make you smile</span>
+                </div>
+
+                <div class="spec">
+                    <strong>Objective 02</strong>
+                    <span>Spend quality time together</span>
+                </div>
+
+                <div class="spec">
+                    <strong>Objective 03</strong>
+                    <span>Create memories worth keeping</span>
+                </div>
+
+                <div class="spec">
+                    <strong>Objective 04</strong>
+                    <span>Make your birthday special ❤️</span>
+                </div>
+
+            </div>
+
+            <div class="button-area">
+
+                <button class="back" onclick="previousStep()">
+                    ← BACK
+                </button>
+
+                <button class="next" onclick="nextStep()">
+                    VIEW LOCATION →
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- STEP 3 -->
+
+        <div class="step" id="step3">
+
+            <div class="step-number">
+                PHASE 03 / PROJECT LOCATION
+            </div>
+
+            <h2>🐠 Manila Ocean Park</h2>
+
+            <p>
+                Proposed project location:
+                a fun day of exploring, laughing,
+                taking pictures, and making memories.
+            </p>
+
+            <div class="destination">
+
+                <img
+                    class="destination-image"
+                    src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1400&q=80"
+                    alt="Aquarium">
+
+                <div class="destination-info">
+
+                    <h3>🐠 Manila Ocean Park</h3>
+
+                    <p>
+                        Primary destination for the birthday
+                        project.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="button-area">
+
+                <button class="back" onclick="previousStep()">
+                    ← BACK
+                </button>
+
+                <button class="next" onclick="nextStep()">
+                    CONTINUE PROJECT →
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- STEP 4 -->
+
+        <div class="step" id="step4">
+
+            <div class="step-number">
+                PHASE 04 / DOCUMENTATION
+            </div>
+
+            <h2>📸 Photo Booth</h2>
+
+            <p>
+                Every successful project requires
+                proper documentation.
+            </p>
+
+            <div class="photo-box">
+
+                <div class="photo-icon">
+                    📸
+                </div>
+
+                <h3>
+                    REQUIRED PROJECT DOCUMENTATION
+                </h3>
+
+                <p>
+                    Photos together<br>
+                    Funny poses<br>
+                    Cute pictures<br>
+                    Birthday memories ❤️
+                </p>
+
+            </div>
+
+            <div class="button-area">
+
+                <button class="back" onclick="previousStep()">
+                    ← BACK
+                </button>
+
+                <button class="next" onclick="nextStep()">
+                    PROCEED TO APPROVAL →
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- STEP 5 -->
+
+        <div class="step" id="step5">
+
+            <div class="step-number">
+                PHASE 05 / PROJECT APPROVAL
+            </div>
+
+            <h2>✅ Approve Project</h2>
+
+            <p>
+                All project plans have been reviewed.
+                The final step is your approval.
+            </p>
+
+            <div class="blueprint">
+
+                <div class="blueprint-title">
+                    APPROVAL CHECKLIST
+                </div>
+
+                <div class="spec">
+                    <strong>Birthday celebration</strong>
+                    <span>✓ Approved</span>
+                </div>
+
+                <div class="spec">
+                    <strong>Manila Ocean Park</strong>
+                    <span>✓ Approved</span>
+                </div>
+
+                <div class="spec">
+                    <strong>Photo Booth</strong>
+                    <span>✓ Approved</span>
+                </div>
+
+                <div class="spec">
+                    <strong>Quality Time Together</strong>
+                    <span>✓ Highly Recommended ❤️</span>
+                </div>
+
+            </div>
+
+            <div class="approval">
+
+                <button
+                    class="approve"
+                    onclick="approveProject()">
+
+                    ✅ APPROVE PROJECT
+
+                </button>
+
+            </div>
+
+            <div class="button-area">
+
+                <button class="back" onclick="previousStep()">
+                    ← BACK
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- STEP 6 -->
+
+        <div class="step" id="step6">
+
+            <div class="step-number">
+                PROJECT STATUS / COMPLETED
+            </div>
+
+            <div class="approval">
+
+                <div class="stamp">
+                    PROJECT APPROVED ❤️
+                </div>
+
+                <h2>❤️ Project Approved!</h2>
+
+                <div class="heart-message">
+
+                    <strong>
+                        Dear Engr. Kips,
+                    </strong>
+
+                    <br><br>
+
+                    Congratulations!
+                    You have successfully approved
+                    your birthday project. 😆❤️
+
+                    <br><br>
+
+                    Your assigned project manager
+                    would like to inform you that your
+                    birthday celebration includes:
+
+                    <br><br>
+
+                    🐠 Manila Ocean Park<br>
+                    📸 Photo Booth<br>
+                    🍽️ A special date<br>
+                    ❤️ Quality time together
+
+                    <br><br>
+
+                    The most important project
+                    specification is simply:
+
+                    <br><br>
+
+                    <strong>
+                        We get to spend your birthday together.
+                    </strong>
+
+                    <br><br>
+
+                    Happy Birthday, love. 🎂❤️
+
+                    <br><br>
+
+                    I hope this project becomes one of
+                    our favorite memories.
+
+                </div>
 
             </div>
 
@@ -628,73 +748,137 @@ footer p {
 
     </div>
 
-</section>
 
+    <div class="footer">
 
-<!-- FOOTER -->
+        PROJECT KP-BDAY-2026
+        •
+        CONFIDENTIAL
+        •
+        APPROVED WITH LOVE ❤️
 
-<footer>
+    </div>
 
-    <h2>Happy Birthday, Love ❤️</h2>
+</div>
 
-    <p>
-        LET'S MAKE THIS ONE UNFORGETTABLE
-    </p>
-
-</footer>
+</div>
 
 
 <script>
 
-/* SECRET MESSAGE */
+let currentStep = 1;
 
-function showMessage() {
+function showStep(step) {
 
-    const message = document.getElementById("secret");
+    document.querySelectorAll(".step").forEach(function(element) {
+        element.classList.remove("active");
+    });
 
-    if (message.style.display === "block") {
+    document.getElementById("step" + step)
+        .classList.add("active");
 
-        message.style.display = "none";
+    updateProgress();
 
-    } else {
-
-        message.style.display = "block";
-
-        createHearts();
-
-    }
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 }
 
 
-/* FLOATING HEARTS */
+function updateProgress() {
+
+    const lines =
+        document.querySelectorAll(".progress-line");
+
+    lines.forEach(function(line, index) {
+
+        if (index < currentStep) {
+            line.classList.add("active");
+        } else {
+            line.classList.remove("active");
+        }
+
+    });
+}
+
+
+function nextStep() {
+
+    if (currentStep < 6) {
+
+        currentStep++;
+
+        showStep(currentStep);
+
+    }
+
+}
+
+
+function previousStep() {
+
+    if (currentStep > 1) {
+
+        currentStep--;
+
+        showStep(currentStep);
+
+    }
+
+}
+
+
+function approveProject() {
+
+    currentStep = 6;
+
+    showStep(currentStep);
+
+    createHearts();
+
+}
+
 
 function createHearts() {
 
-    for (let i = 0; i < 18; i++) {
+    for (let i = 0; i < 25; i++) {
+
+        const heart =
+            document.createElement("div");
+
+        heart.innerHTML = "❤️";
+
+        heart.style.position = "fixed";
+        heart.style.left =
+            Math.random() * 100 + "vw";
+
+        heart.style.bottom = "-30px";
+
+        heart.style.fontSize =
+            (15 + Math.random() * 25) + "px";
+
+        heart.style.zIndex = "9999";
+
+        heart.style.transition =
+            "transform 4s linear, opacity 4s linear";
+
+        document.body.appendChild(heart);
 
         setTimeout(function() {
 
-            const heart = document.createElement("div");
+            heart.style.transform =
+                "translateY(-110vh)";
 
-            heart.className = "heart";
+            heart.style.opacity = "0";
 
-            heart.innerHTML = "❤️";
+        }, 100);
 
-            heart.style.left =
-                Math.random() * 100 + "vw";
+        setTimeout(function() {
 
-            heart.style.animationDuration =
-                (4 + Math.random() * 4) + "s";
+            heart.remove();
 
-            document.body.appendChild(heart);
-
-            setTimeout(function() {
-
-                heart.remove();
-
-            }, 8000);
-
-        }, i * 150);
+        }, 4500);
 
     }
 
